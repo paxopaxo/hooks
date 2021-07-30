@@ -11,6 +11,20 @@ export const SimpleForm = () => {
     })
 
     const { name, email } = formState
+    
+    useEffect(() => {
+        console.log('Hey!')
+    }, [] ) 
+    
+    useEffect(() => {
+        // console.log('FormState cambió')
+    }, [formState] ) 
+    
+    // Cuando está el array vacío solo se ejecuta la primera vez
+    
+    useEffect(() => {
+        // console.log('email cambió')
+    }, [email] ) 
 
     const handleInputChange = ({ target }) =>{
 
@@ -20,22 +34,7 @@ export const SimpleForm = () => {
         })
 
     }
-
-
-    useEffect(() => {
-        console.log('Hey!')
-    }, [] ) 
-
-    useEffect(() => {
-        // console.log('FormState cambió')
-    }, [formState] ) 
     
-    // Cuando está el array vacío solo se ejecuta la primera vez
-
-    useEffect(() => {
-        // console.log('email cambió')
-    }, [email] ) 
-
     return (
         <>
           <h1>useEffect</h1>  
