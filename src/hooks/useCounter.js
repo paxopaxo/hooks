@@ -4,16 +4,16 @@ export const useCounter = ( initialState = 10 ) => {
 
     const [state, setState] = useState(initialState)
 
-    const inc = ( factor = 1 ) => {
-        setState( state + factor )
+    const inc = () => {
+        setState( state + 1 )
     }
 
     const reset = () => {
         setState(initialState)
     }
 
-    const dec = ( factor = 1 ) => {
-        setState( state - factor )
+    const dec = () => {
+        setState( state + 1 )
     }
 
     return {
