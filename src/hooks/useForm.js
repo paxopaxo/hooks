@@ -1,17 +1,22 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 export const useForm = ( initialState = {} ) => {
 
     const [values, setForm] = useState(initialState)
     
+    const reset = () => {
+        setForm( initialState )
+    }
+
+
     const handleImputChange = ({ target }) => {
 
         setForm({
             ...values,
-            [target.name]: target.value
+            [target.name]: target.value 
         })
     }
 
-    return [ values, handleImputChange ]
+    return [ values, handleImputChange, reset ]
 
 }
